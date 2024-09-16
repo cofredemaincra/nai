@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda Avanzada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mi Tienda</div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Buscar productos...">
+                <button id="search-btn">Buscar</button>
+            </div>
+            <div class="nav-links">
+                <a href="#" id="login-btn">Iniciar Sesión</a>
+                <a href="#" id="cart-btn">Carrito <span id="cart-count">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="filters">
+            <h2>Filtros</h2>
+            <div>
+                <label for="category">Categoría:</label>
+                <select id="category">
+                    <option value="">Todas</option>
+                    <option value="ropa">Ropa</option>
+                    <option value="electronica">Electrónica</option>
+                    <option value="hogar">Hogar</option>
+                </select>
+            </div>
+            <div>
+                <label for="price-range">Rango de precio:</label>
+                <input type="range" id="price-range" min="0" max="1000" step="10" value="1000">
+                <span id="price-value">$1000</span>
+            </div>
+        </section>
+
+        <section id="products"></section>
+
+        <div id="pagination">
+            <button id="prev-page">Anterior</button>
+            <span id="current-page">1</span>
+            <button id="next-page">Siguiente</button>
+        </div>
+    </main>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total">Total: $0</div>
+            <button id="checkout-btn">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <div id="product-details"></div>
+            <div id="product-reviews"></div>
+            <form id="review-form">
+                <textarea placeholder="Escribe tu reseña" required></textarea>
+                <select id="rating" required>
+                    <option value="">Calificación</option>
+                    <option value="1">1 estrella</option>
+                    <option value="2">2 estrellas</option>
+                    <option value="3">3 estrellas</option>
+                    <option value="4">4 estrellas</option>
+                    <option value="5">5 estrellas</option>
+                </select>
+                <button type="submit">Enviar Reseña</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <h2>Proceso de Pago</h2>
+            <form id="checkout-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="text" placeholder="Dirección" required>
+                <input type="text" placeholder="Número de tarjeta" required>
+                <input type="text" placeholder="Fecha de expiración" required>
+                <input type="text" placeholder="CVV" required>
+                <button type="submit">Completar Compra</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+              </html>
